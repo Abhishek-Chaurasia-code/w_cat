@@ -1,5 +1,3 @@
-
-
 //const { strict } = require("assert");
 const { FORMERR } = require("dns");
 let fs = require("fs");
@@ -35,20 +33,12 @@ if(cmd.includes("\\")&& cmd.includes(".")){
 }
 
  else {
- //let  dirpath=input[1];
- //let r= "";
-   /*  if(dirpath=="-n"||dirpath=="-b"){
-     r=dirpath;
-     dirpath=input[2];
-  }  */
+ 
      switch (cmd){
 
      case "-s":
         let k= input[1];
-        /* if(dirpath=="-n"||dirpath=="-b"){
-         r=dirpath;
-         dirpath=input[2];
-       }  */
+        
        for(let i=1;i<input.length;i++){
 
          if(input[i].includes("\\")){
@@ -75,19 +65,7 @@ if(cmd.includes("\\")&& cmd.includes(".")){
          }
           
        }
-       /* let content1=readFile(dirpath);
-       let content2=blbToslb(content1);
-       if(r=="-n"){
-         let content_numall=numallLines(content2);
-         content2=content_numall;
-       }
-       if(r=="-b"){
-        let content_numNE=numNElines(content2);
-        content2=content_numNE;
-      }
        
-       console.log(content2); */
-       //console.log("replace big line breaks with singular line break");
        break;
 
      case "-n":
@@ -138,28 +116,13 @@ if(cmd.includes("\\")&& cmd.includes(".")){
 }
 
 function blbToslb(content){
-//let content = readFile(dirpath);
-//let contentmod= "";
-// for(let i=0;i<content.length-1;i++){
-   
-//   if(!(content[i]=='\n')){
-//     contentmod+=  content[i];
-//   }
-//   if(content[i]=='\n' && !(content[i+1]=='\n')){
-//        contentmod+=  content[i];
-//   }
-//   //console.log(contentmod);
-// }
-  //console.log(contentmod);
-  //return contentmod;
 
-//content = content.replace(/\n/g, "1");
 content = content.replace(/[\r\n]+/g, '\r\n');
 return content;
 
 }
 
-function numallLines(content,l){
+function numallLines(content){
     //let content = readFile(dirpath);
     content="1 "+content;
     let contentmod="";
@@ -196,3 +159,4 @@ function numNElines(content){
 
   return contentmod;
 }
+
